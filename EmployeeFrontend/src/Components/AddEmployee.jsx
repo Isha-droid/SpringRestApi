@@ -11,18 +11,34 @@ const AddEmployee = () => {
     setEmail('');
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Create an object with the desired keys
     const formData = {
       firstName: firstName,
       lastName: lastName,
       emailId: email
     };
 
-    // Log the object to the console
-    console.log(formData);
+    try {
+      const response = await fetch('http://localhost:8000/api/v1/employees', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      const data = await response.json();
+      alert("employee added successfully")
+      console.log('Response data:', data);
+    } catch (error) {
+      console.error('Error:', error);
+    }
   };
 
   return (
