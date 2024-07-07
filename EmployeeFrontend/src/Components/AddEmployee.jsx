@@ -11,11 +11,25 @@ const AddEmployee = () => {
     setEmail('');
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Create an object with the desired keys
+    const formData = {
+      firstName: firstName,
+      lastName: lastName,
+      emailId: email
+    };
+
+    // Log the object to the console
+    console.log(formData);
+  };
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="bg-white p-8 rounded-xl shadow-xl max-w-md w-full">
         <h2 className="text-3xl font-bold mb-8 text-center text-gray-800">Add Employee</h2>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="mb-6">
             <input
               type="text"
