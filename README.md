@@ -5,10 +5,9 @@ This project is an Employee Management System built with React.js for the fronte
 ## Technologies Used
 
 <div align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1280px-React-icon.svg.png" alt="React Logo" height="100" />
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Spring_Framework_Logo_2018.svg/1280px-Spring_Framework_Logo_2018.svg.png" alt="Spring Boot Logo" height="100" />
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Java_programming_language_logo.svg/131px-Java_programming_language_logo.svg.png" alt="Java Logo" height="100" />
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/JSON_RESTful_web_service_logo.svg/1200px-JSON_RESTful_web_service_logo.svg.png" alt="REST API Logo" height="100" />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1280px-React-icon.svg.png" alt="React Logo" height="50" />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Spring_Framework_Logo_2018.svg/1280px-Spring_Framework_Logo_2018.svg.png" alt="Spring Boot Logo" height="50" />
+  
 </div>
 
 ## Description
