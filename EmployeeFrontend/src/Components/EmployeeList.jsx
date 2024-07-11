@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { FaEdit, FaTrash } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const EmployeeList = () => {
   const [employees, setEmployees] = useState([]);
@@ -17,6 +19,16 @@ const EmployeeList = () => {
     fetchData();
   }, []);
 
+  const handleDelete = async (id) => {
+    try {
+      await axios.delete(`http://localhost:8000/api/v1/employees/${id}`);
+      setEmployees(employees.filter(emp => emp.id !== id));
+      console.log(`Employee with ID ${id} deleted successfully.`);
+    } catch (error) {
+      console.error('Error deleting employee:', error);
+    }
+  };
+
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold text-gray-800 mb-8 text-center">Employee List</h1>
@@ -26,12 +38,23 @@ const EmployeeList = () => {
             <div className="p-6">
               <h2 className="text-xl font-semibold text-gray-800 mb-2">{employee.firstName} {employee.lastName}</h2>
               <p className="text-gray-600">{employee.emailId}</p>
+              <div className="flex justify-end mt-4">
+                <button
+                  onClick={() => handleDelete(employee.id)}
+                  className="text-red-500 hover:text-red-700 focus:outline-none"
+                >
+                  <FaTrash className="w-5 h-5" />
+                </button>
+                <Link to={`/edit-employee/${employee.id}`} className="ml-3 text-blue-500 hover:text-blue-700 focus:outline-none">
+                  <FaEdit className="w-5 h-5" />
+                </Link>
+              </div>
             </div>
           </div>
         ))}
       </div>
     </div>
   );
-}
+};
 
 export default EmployeeList;
